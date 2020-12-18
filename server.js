@@ -11,19 +11,24 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-app.get("notes", (request, response) => {
-    fs.readFile("public/notes.html", (error,data))
-        response.send(data);
+app.get("/notes", (request, response) => {
+        response.sendFile(__dirname + "/public/notes.html");
 }); 
 
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+app.get("*", (request, response) => {
+    
+
+    
+    response.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "notes.html"));
-});
-
+app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/index.html"));
+  });
+app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/notes.html"));
+  });  
+  
 
 
 app.listen(PORT, function() {
