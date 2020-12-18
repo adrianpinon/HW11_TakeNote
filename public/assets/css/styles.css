@@ -2,6 +2,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: url("nathalia-rosa-P1SdQAhcJz8-unsplash.jpg");
+
 }
 
 .save-note {
@@ -68,3 +70,4 @@ html, body {
   padding: 20px;
   cursor: pointer;
 }
+
