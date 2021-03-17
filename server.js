@@ -38,3 +38,4 @@ app.listen(PORT, function() {
     console.log("App is listening on PORT:" +  PORT);
 });
 
+module.exports = app;

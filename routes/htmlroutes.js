@@ -3,7 +3,7 @@ let path = require("path");
 
 
 module.exports = function (app) {
-  app.use(express.static(path.join(__dirname, "../public")));
+  app.use(express.static(path.join(__dirname, "./public")));
 
   app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/notes.html"));
@@ -16,4 +16,5 @@ module.exports = function (app) {
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
+  //console.log(req)
 };
